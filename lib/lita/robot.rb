@@ -94,7 +94,9 @@ module Lita
     # @param strings [String, Array<String>] One or more strings to send.
     # @return [void]
     def send_messages(target, *strings)
+      Lita.logger.debug("entered robot.send_messages")
       adapter.send_messages(target, strings.flatten)
+      Lita.logger.debug("left robot.send_messages")
     end
     alias_method :send_message, :send_messages
 
